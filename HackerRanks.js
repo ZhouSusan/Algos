@@ -67,3 +67,20 @@ function vowelsAndConsonants(s) {
         console.log(s[j]);
     }
 }
+
+/*Complete the function in the editor below by returning a RegExp object, , that matches any string  that begins and ends with the same vowel. 
+Recall that the English vowels are a, e, i, o, and u.
+String  consists of lowercase letters only (i.e., [a-z]).*/
+function regexVar(str) {
+    /*
+     * Declare a RegExp object variable named 're'
+     * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+     */
+    
+    
+    /*
+     * Do not remove the return statement
+     */
+    let re = RegExp(/^([aeiou]).*\1$/);;
+    return re;
+}
