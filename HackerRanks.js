@@ -117,3 +117,17 @@ function getPerimeter(length, width) {
     perimeter = (2*length) + (2*width);
     return perimeter;
 }
+
+/*
+ * Create the function factorial here
+ */
+
+function factorial(num) {
+    let i = 1;
+    let total = 1;
+    while(i < num) {
+        total *= num;
+        num--;
+    }
+    return total;
+}   
