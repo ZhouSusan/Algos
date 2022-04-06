@@ -131,3 +131,26 @@ function factorial(num) {
     }
     return total;
 }   
+
+function main(input) {
+    // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+    let r = input;
+    const PI = 3.141592653589793;
+    // Print the area of the circle:
+    const area  = (r**2) * PI;
+    console.log(area);
+    // Print the perimeter of the circle:
+    const perimeter = 2 * r * PI;
+    console.log(perimeter);
+    try {    
+        // Attempt to redefine the value of constant variable PI
+        PI = radius;
+        // Attempt to print the value of PI
+        console.log(PI);
+    } catch(error) {
+        console.error("You correctly declared 'PI' as a constant.");
+    }
+}
+
+main(2.6);
+main(5);
