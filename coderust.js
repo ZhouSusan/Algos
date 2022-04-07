@@ -21,4 +21,21 @@ let binarySearch = function(nums, target) {
     return -1;
 };
 
-console.log(binarySearch([1, 3, 9, 10, 12], 9));
+let binarySearch2 = function(nums, target, start, end) {
+
+    if (start > end) {
+        return -1;
+    }
+
+    let mid = start + Math.floor((end - start)/2);
+    if (nums[mid] === target) {
+        return mid;
+    } else if (nums[mid] > target) {
+        return binarySearch2(nums, target, start, (mid-1));
+    } else {
+        return binarySearch2(nums, target, (mid-1), end);
+    }
+};
+
+//console.log(binarySearch([1, 3, 9, 10, 12], 9));
+console.log(binarySearch2([1, 3, 9, 10, 12], 9));
