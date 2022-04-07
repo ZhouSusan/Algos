@@ -283,3 +283,42 @@ function swapFirstLast(arr){
 
     return arr;
 }
+
+/*Complete the getLetter(s) function in the editor. It has one parameter: a string, s, consisting of lowercase English alphabetic letters (i.e., a through z). It must return A, B, C, or D depending on the following criteria:
+
+If the first character in string s is in the set {a, e, i, o, u}, then return A.
+If the first character in string s is in the set {b, c, d, f, g}, then return B.
+If the first character in string s is in the set {h, j, k, l, m}, then return C.
+If the first character in string s is in the set {n, p ,q,r, s, t, v, w, x, y, z}, then return D.*/
+
+const getLetter = (s) => {
+    let letter;
+
+    switch(s[0]) {
+        case ('a' || 'e' || 'i' || 'o' || 'u') :
+            letter = 'A';
+            break;
+        case ('b' || 'c' || 'd' || 'f' || 'g') :
+            letter = 'B';
+            break;
+        case ('h' || 'j' || 'k' || 'l' || 'm') :
+            letter = 'C';
+            break;
+        case ('z' || 'p' || 'r' || 's' || 't' || 'v' || 'w' || 'x' || 'y' ||'n') :
+            letter = 'D';
+            break;
+    }
+    return letter;
+}
+
+console.log(getLetter('adfgt'));
+
+/*Return the second largest number in the array.
+@param {Number[]} nums - An array of numbers.
+@return {Number} The second largest number in the array.
+*/
+function getSecondLargest(nums) {
+    let uniqueNums = [...new Set(nums)];
+    let sortedNums =  uniqueNums.sort((a, b) => {return b - a});
+    return sortedNums[1];
+}
