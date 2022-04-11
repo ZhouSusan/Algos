@@ -39,3 +39,37 @@ let binarySearch2 = function(nums, target, start, end) {
 
 //console.log(binarySearch([1, 3, 9, 10, 12], 9));
 console.log(binarySearch2([1, 3, 9, 10, 12], 9));
+
+/*Rotate an Array by 'n' Elements
+We’re given an array of integers, nums. Rotate the array by n elements, where n is an integer:
+
+For positive values of n, perform a right rotation.
+For negative values of n, perform a left rotation.
+Make sure we make changes to the original array.
+*/
+
+let rotateArray = function(nums, n) {
+    if (n === 0) {
+        return nums;
+    }
+    
+    if (n < 0) {
+        while (n < 0) {
+            let temp = nums.shift();
+            nums.push(temp);
+            n++;
+        }
+    } else if (n > 0) {
+        while (n > 0) {
+            let temp = nums.pop();
+            nums.unshift(temp);
+            n--;
+        }
+    }
+
+    return nums;
+};
+
+console.log(rotateArray([-1,-100,3,99], 2));
+let arr = [1, 10, 20, 0, 59, 86, 32, 11, 9, 40];
+console.log(rotateArray(arr, -3))
