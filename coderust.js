@@ -73,3 +73,23 @@ let rotateArray = function(nums, n) {
 console.log(rotateArray([-1,-100,3,99], 2));
 let arr = [1, 10, 20, 0, 59, 86, 32, 11, 9, 40];
 console.log(rotateArray(arr, -3))
+
+//We’re given a sorted integer array, nums and an integer value, target. The array is rotated by some arbitrary number. 
+//Search the target in this array. If the target does not exist then return -1.
+
+let binarySearchRotated = function(nums, target) {
+    // let low = 0;
+    // let high = nums.length-1;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === target) {
+            return i;
+        }
+    }
+    return -1;
+};
+
+let nums = [6, 7, 1, 2, 3, 4, 5]
+let target = 2;
+//expected - 4
+console.log(binarySearchRotated(nums, target));
