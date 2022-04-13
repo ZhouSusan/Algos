@@ -78,12 +78,26 @@ console.log(rotateArray(arr, -3))
 //Search the target in this array. If the target does not exist then return -1.
 
 let binarySearchRotated = function(nums, target) {
-    // let low = 0;
-    // let high = nums.length-1;
+    let low = 0;
+    let high = nums.length-1;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === target) {
-            return i;
+    while (low <= high) {
+        let middle = low + Math.floor((high-low)/2);
+        if (nums[middle] === target) {
+            return middle;
+        } 
+        if (nums[low] <= nums[middle]) {
+            if (nums[low] <= target && target < nums[middle]) {
+                high = middle - 1;
+            } else {
+                low = middle + 1;
+            }
+        } else {
+            if (nums[middle] < target && target <= nums[high]) {
+                low = middle + 1;
+            } else {
+                high = middle - 1;
+            }
         }
     }
     return -1;
