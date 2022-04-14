@@ -107,3 +107,32 @@ let nums = [6, 7, 1, 2, 3, 4, 5]
 let target = 2;
 //expected - 4
 console.log(binarySearchRotated(nums, target));
+
+/*We’re given three integer arrays, each sorted in ascending order.
+Return the smallest number common in all three arrays. In case no number is common, return -1.*/
+
+let findLeastCommonNumber = function(arr1, arr2, arr3) {
+    let array = arr1.concat(arr2).concat(arr3)
+    let numberObj = {};
+    for (let i = 0; i < array.length; i++) {
+        if (numberObj.hasOwnProperty(array[i])) {
+            numberObj[array[i]]++;
+        } else {
+            numberObj[array[i]] = 1;
+        }
+    }
+    let commonSmallesNum = -1; 
+    for (let key in numberObj) {
+    if (numberObj[key] === 3) {
+        commonSmallesNum = parseInt(key);
+        break;
+    }
+    }
+    return commonSmallesNum;
+};
+
+v1 = [6, 7, 10, 25, 30, 63, 64]
+v2 = [0, 4, 5, 6, 7, 8, 50]
+v3 = [1, 6, 10, 14]
+
+console.log(findLeastCommonNumber(v1, v2, v3));
