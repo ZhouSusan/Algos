@@ -60,3 +60,19 @@ should return 1 as there is only one element in the array whose value is greater
 function returnArrayCountGreaterThanY(arr, y){
     return arr.filter(x => x > y).length;
 }
+
+/*
+Implement function sigma(num) that given a number, returns the sum of all positive integers up to number (inclusive).
+Ex.:sigma(3)=6(or1 + 2 + 3); sigma(5)=15(or1 + 2 + 3 + 4 + 5).
+*/
+
+function sigma(num){
+    let sum = 0;
+    while (num > 0) {
+        sum += num;
+        num--;
+    }
+    return sum;
+}
+
+console.log(sigma(6));
