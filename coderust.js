@@ -156,3 +156,29 @@ v2 = [0, 4, 5, 6, 7, 8, 50]
 v3 = [1, 6, 10, 14]
 
 console.log(findLeastCommonNumber2(v1, v2, v3));
+
+//  We’re given a sorted array of integers, nums, and an integer value, target. Return the low and high index of the given target element. 
+//If the indexes are not found, return -1.
+
+let first = 0; 
+let last = 0;
+
+let findLowIndex = function(arr, key) {
+  //TODO: Write - Your - Code
+  if (arr.indexOf(key) > -1) {
+    first = arr.indexOf(key);
+    last = arr.lastIndexOf(key);
+    return first, last;
+  }
+  return -1;
+};
+
+let findHighIndex = function(arr, key) {
+  //TODO: Write - Your - Code
+  if (arr.indexOf(key) > -1) {
+    first = arr.indexOf(key);
+    last = arr.lastIndexOf(key);
+     return first, last;
+  }
+  return -1;
+};
