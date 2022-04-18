@@ -225,3 +225,20 @@ let findLowIndex2 = function(arr, key) {
 
 console.log(findLowIndex2([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 9], 2), 
 findHighIndex2([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 9], 2));
+
+/*We’re given an integer array, nums. 
+Move all zeroes if any to the left while maintaining the order of other elements in the array.*/
+
+let moveZerosToLeft = function(nums) {
+ 
+     for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            nums.splice(i, 1);
+            nums.unshift(0);
+        } 
+      }
+      console.log(nums);
+      return nums;
+  };
+
+console.log(moveZerosToLeft([1, 10, 20, 0, 59, 63, 0, 88, 0]));
