@@ -125,12 +125,26 @@ function getPerimeter(length, width) {
 function factorial(num) {
     let i = 1;
     let total = 1;
-    while(i < num) {
-        total *= num;
-        num--;
+    while(i < num) {// 1 < 3
+        total *= num; //3 * 2 * 1
+        num--;// num -2 
     }
     return total;
 }   
+
+function assestionEquals(actual, expected, testName) {
+    if (actual === expected) {
+        console.log('passed');
+    } else {
+        console.log(`${testName} has failed. Please try look at code`);
+    }
+}
+
+let testCase1 = 5;// 5 * 4* 3* 2 * 1
+let expected1 = 120;
+let actual1 = factorial(testCase1);
+
+assestionEquals(actual1, expected1, "factorial test");
 
 function main(input) {
     // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
