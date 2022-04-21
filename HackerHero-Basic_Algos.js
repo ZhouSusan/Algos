@@ -76,3 +76,26 @@ function sigma(num){
 }
 
 console.log(sigma(6));
+
+/*
+Given array, swap first and last, second and second-to-last, third and third-to- last, etc.
+Have the function return this swapped array.
+For example swapTowardCenter([true,42,"Ada",2,"pizza"]) should return ["pizza",2,"Ada",42,true]. 
+Passing [1,2,3,4,5,6] should return [6,5,4,3,2,1].
+*/
+
+function swapTowardCenter(arr){
+    let i = 0; 
+    let j = arr.length-1;
+
+    while (i <= j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        
+        i++;
+        j--;
+    }
+
+return arr;
+}
