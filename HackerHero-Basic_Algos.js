@@ -246,3 +246,19 @@ const clockHandAngles2 = (seconds) => {
 
 console.log(clockHandAngles2(10800));
 console.log(clockHandAngles2(5000));
+
+function isPrime(num){
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(
+    isPrime(3), 
+    isPrime(4),
+    isPrime(13),
+    isPrime(65),
+    isPrime(17))
