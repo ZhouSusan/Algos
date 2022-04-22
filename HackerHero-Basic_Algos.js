@@ -134,7 +134,6 @@ fibonacci(3) = 2 (fib(1)+fib(2), or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) =
 */
 
 function fibonacci(index){
-
     if (index === 0) {
         return 0;
     }
@@ -142,6 +141,5 @@ function fibonacci(index){
     if (index <= 2) {
         return 1;
     }
-    
     return fibonacci(index - 2) +  fibonacci(index - 1)
 }
