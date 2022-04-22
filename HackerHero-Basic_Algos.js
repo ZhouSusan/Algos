@@ -183,8 +183,24 @@ function sumToOne(num) {
     }
 }
 
+
+const sumToOne2 = (num) => {
+    let numString = num.toString();
+    let sum;
+
+    do {
+        sum = 0;
+        for (let i = 0; i < numString.length; i++) {
+            sum += parseInt(numString[i]);
+        }
+        numString = sum.toString();
+    } while (sum >= 10) {
+        return sum;
+    }
+}
+
 console.log(
-sumToOne(35),
-sumToOne(928),
-sumToOne(5798),
-sumToOne(35798))
+sumToOne2(35),
+sumToOne2(928),
+sumToOne2(5798),
+sumToOne2(35798))
