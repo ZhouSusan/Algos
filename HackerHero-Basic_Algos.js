@@ -262,3 +262,28 @@ console.log(
     isPrime(13),
     isPrime(65),
     isPrime(17))
+
+/*
+Create the extractDigit(num,digitNum) function that given a number and a digit number, returns the numeral value of that digit.
+0 represents the ones digit, 1 represents the tens digit, etc. Given (1824,2), return 8. Given (1824,0), return 4. Given (1824,7), return 0.
+
+Second: handle negative digitNum values, where -1 represents tenths digit (0.x), -2 represents hundredths digit (0.0x), etc. Given (1234.56,-1), return 5.
+ */    
+
+function extractDigit(num,digitNum){
+    if (digitNum <= 0) {
+
+        let numArr = num.toString().split('.');
+        console.log(numArr[0][numArr[0].length-1]);
+        if (digitNum === 0) {
+            return numArr[0][numArr[0].length-1];
+        }
+        return numArr[1][Math.abs(digitNum) - 1];
+    } else {
+    
+    if (digitNum === 0) {
+        return num.toString()[num.toString().length-1];
+    }
+    return num.toString()[digitNum-1];
+    }
+}
