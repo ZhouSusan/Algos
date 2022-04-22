@@ -232,3 +232,17 @@ function clockHandAngles(seconds) {
 return [counts[0], counts[1], counts[2]];
     
 }
+
+//Refactor clockHandAngles
+const clockHandAngles2 = (seconds) => {
+    let hour_hand = seconds/ 3600 % 12;
+    let minute_hand = seconds/60 % 60;
+    let second_hand = seconds % 60;
+
+    //apply a scaling factor to convert from units (minutes, seconds, etc) to degrees, and finally limit each value to 360 degrees.
+    let clock_hands = [Math.ceil(hour_hand*30), Math.ceil(minute_hand*6), Math.ceil(second_hand*6)];
+    return clock_hands;
+} 
+
+console.log(clockHandAngles2(10800));
+console.log(clockHandAngles2(5000));
