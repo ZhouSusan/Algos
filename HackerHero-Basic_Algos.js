@@ -287,3 +287,31 @@ function extractDigit(num,digitNum){
     return num.toString()[digitNum-1];
     }
 }
+
+/**
+input: arr - array 
+output: arr - array
+constraints: do not use built-in functions, do not create an additional array/ objects
+edge case: if the array is empty or less than 2 values, return the array || if the input is not an array, return []
+
+ */
+
+function reverse(arr){
+    
+    let i = 0; 
+    let j = arr.length-1;
+
+    while (i < j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+    }
+    return arr;
+}
+
+console.log(reverse([1,3,5]));
+console.log(reverse([-1, 3, -5]));
+console.log(reverse([1, 2, 3, 4, 5])); 
+console.log(reverse([2, 10, 13, 15]));
