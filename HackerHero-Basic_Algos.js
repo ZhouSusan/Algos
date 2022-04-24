@@ -380,6 +380,19 @@ function nToLast(arr, n){
     if(!arr || arr.length < n) {
         return null;
     }
-    
+
     return arr[arr.length-n]
+}
+
+//Given array, and indices start and end, remove vals in that index range, working in-place (hence shortening the array). Given ([20,30,40,50,60,70],2,4), change to [20,30,70] and return it.
+
+function removeRange(arr, start, end){
+    let removedVal = [];
+
+for (let i = 0; i < arr.length; i++) {
+    if (i < start || i > end) {
+        removedVal.push(arr[i])
+    }
+}
+return removedVal;
 }
