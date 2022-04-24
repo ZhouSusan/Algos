@@ -315,3 +315,34 @@ console.log(reverse([1,3,5]));
 console.log(reverse([-1, 3, -5]));
 console.log(reverse([1, 2, 3, 4, 5])); 
 console.log(reverse([2, 10, 13, 15]));
+
+/**
+i: arr- array of numbers, min- integer, max- integer
+o: arr- array of numbers
+c: return array with values in original order && no built-in function 
+Notes: min and max input values are exclusive 
+e: if the array is empty or the input is not an array- return []
+ */
+
+function filterRange(arr, min, max){
+    if (!arr || arr.length === 0) {
+        return [];
+    }
+    let numbersBetween = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > min && arr[i] < max) {
+            numbersBetween.push(arr[i])
+        }
+    }
+    return numbersBetween;
+}
+
+/*
+Replicate JavaScript’s concat(). Create a standalone function that accepts two arrays. 
+Return a new array containing the first array’s elements, followed by the second array’s elements. 
+Do not alter the original arrays.
+*/
+
+function arrayConcat(arr1, arr2){
+    return [...arr1, ...arr2];
+}
