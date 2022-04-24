@@ -367,3 +367,9 @@ for (let i  = 1; i < arr.length; i++) {
 
 return newArr;
 }
+
+//Return the second-to-last element of an array. Given [42,true,4,"Kate",7], return "Kate". If array is too short, return null.
+
+function secondToLast(arr){
+    return arr[arr.length-2];
+}
