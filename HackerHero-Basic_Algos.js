@@ -474,7 +474,7 @@ function parensValid(str){
         }
     }
 
-    //if paransCount is not null then a clsoing parenthesis is missing
+    //if paransCount is not null then a closing parenthesis is missing
     if (paransCount > 0) {
         return false;
     }
