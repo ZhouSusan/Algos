@@ -413,24 +413,19 @@ If the final digit were any non-multiple of 10, we would instead return false.
 function isCreditCardValid(digitArr) {
     let total = 0;
 
-for (let i = digitArr.length-2; i > 0; i-=2) {
-    digitArr[i] = digitArr[i] * 2;
-    if (digitArr[i] > 9) {
-        digitArr[i] -= 9;
-    }    
-    total += digitArr[i];
-}
+    for (let i = digitArr.length-2; i > 0; i-=2) {
+        digitArr[i] = digitArr[i] * 2;
+        if (digitArr[i] > 9) {
+            digitArr[i] -= 9;
+        }    
+        total += digitArr[i];
+    }
 
+    for (let i = 0; i < digitArr.length-2; i+=2) {
+        total += digitArr[i];
+    }
 
-for (let i = 0; i < digitArr.length-2; i+=2) {
-    total += digitArr[i];
-}
+    total += digitArr[digitArr.length-1];
 
-total += digitArr[digitArr.length-1];
-
-if (total % 10 === 0) {
-    return true;
-}
-
-return false;
+    return total % 10 === 0? true: false;
 }
