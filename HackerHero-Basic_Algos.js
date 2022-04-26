@@ -497,3 +497,64 @@ function bubbleSort(arr) {
     }
     return arr;
 }
+
+/*
+Create a function that prints a multiplication table such as follows:
+
+multiTable(2,2) should print
+
+1 2
+
+2 4
+
+multiTable(3,3) should print
+
+1 2 3
+
+2 4 6
+
+3 6 9
+
+multiTable(4,4) should print
+
+1 2 3 4
+
+2 4 6 8
+
+3 6 9 12
+
+4 8 12 16
+
+multiTable(2,4) should print
+
+1 2
+
+2 4
+
+3 6
+
+4 8
+
+For this challenge, it could print/log all of these numbers in a single row or as many rows as you want.
+As long as it displays the numbers in the right sequence, it will pass the test cases.
+*/
+
+function multiTable(x,y) {
+    let result = '';
+
+    for (let i = 0; i <= y; i++) {
+        for (let j = 0; j <= x; j++) {
+
+            if(i>0 && j>0){
+
+            result += (i*j) + ' ';
+            }
+        }
+    }
+
+    for (let i = 0; i < result.length; i++) {
+        console.log(result[i]);
+    }
+
+    return result;
+}
