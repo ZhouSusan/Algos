@@ -1,3 +1,5 @@
+//Recursions Questions 
+
 /*
 Before you work on the first recursion challenge, it's best that you solve these challenges first using Javascript (for now).  Although you could also approach these challenges using Python or Java, you'll get most of this module by doing this in Javascript as my videos, as well as video solutions, are all in Javascript.
 
@@ -17,4 +19,18 @@ function sigma(n) {
     }
     
     return n + sigma(n-1);
+}
+
+/*
+Using recursion, write a function factorial(num) that, given a number, returns the product (multiplication) of all positive integers from 1 up to the given number (inclusive).
+For example, factorial(3) = 6 (or 123); factorial(5) = 120 (or 12345).
+For this challenge, do not worry about time-complexity of your code yet.
+*/
+
+function factorial(n) {
+    if (n === 1) {
+        return n;
+    }
+    
+    return n * factorial(n-1); 
 }
