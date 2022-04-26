@@ -623,7 +623,7 @@ Create a function twoDimensional(row, column) that returns a two dimensional arr
 Assume that both row and column are greater than 2.
 */
 
-function twoDimensional(row, column){
+function twoDimensional2(row, column){
     let resultArr = [];
 
 for (let i = 0; i < row; i++) {
@@ -631,17 +631,14 @@ for (let i = 0; i < row; i++) {
     for (let j = 0; j < column;j++) {
         if (resultArr.length === 0) {
             subArr.push(1)
-            console.log("first subarr of value one");
         } else if(resultArr.length > 0 && resultArr.length < row - 1) {
             if (j === 0 || j === column - 1) {
                 subArr.push(1);
             } else {
                 subArr.push(0);
             }
-            console.log("This is an array we create 1 and zeros")
         } else if (resultArr.length === row -1) {
             subArr.push(1);
-            console.log("This is where we make the last sub array of value of 1s");
         }
     }
     resultArr.push(subArr);
