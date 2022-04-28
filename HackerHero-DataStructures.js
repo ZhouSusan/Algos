@@ -52,3 +52,22 @@ function fib(n) {
     
     return fib(n-2) + fib(n-1);
 }
+
+/*
+Given a string, use recursion to return array where each element is a string representing a different anagram (a different sequence of the letters in that string). For example, if given "lim", return ["ilm", "iml", "lim", "lmi", "mil", "mli"].
+*/
+
+
+function StringAnagram(str, memo, arr) {
+    if(!memo) { memo = ""};
+    if(!arr) { arr = []};
+    if(str.length == 0){
+        arr.push(memo);
+        return arr;
+    }
+    for (var i = 0; i<str.length; i++){
+        StringAnagram(str.slice(0,i) + str.slice(i+1, str.length),   memo+str[i],   arr);
+    }
+    return arr;
+  };
+  console.log(StringAnagram('cat'));
