@@ -11,7 +11,8 @@ let sortedSquares = function(nums){
     return result.sort(function(a, b) { return a - b});
 };
 
-function assertionEqualsArray(actual, expected, testName) {
+//
+function assertEqualsArray(actual, expected, testName) {
     let sameLength = true;
     let sameValue = true; 
 
@@ -47,8 +48,8 @@ let expected4 = [25];
 let actual5 = sortedSquares([5]);
 let expected5 = [25];
 
-assertionEqualsArray(actual1, expected1, 'sortedSquares');
-assertionEqualsArray(actual2, expected2, 'sortedSquares');
-assertionEqualsArray(actual3, expected3, 'sortedSquares');
-assertionEqualsArray(actual4, expected4, 'sortedSquares');
-assertionEqualsArray(actual5, expected5, 'sortedSquares');
+assertEqualsArray(actual1, expected1, 'sortedSquares');
+assertEqualsArray(actual2, expected2, 'sortedSquares');
+assertEqualsArray(actual3, expected3, 'sortedSquares');
+assertEqualsArray(actual4, expected4, 'sortedSquares');
+assertEqualsArray(actual5, expected5, 'sortedSquares');
