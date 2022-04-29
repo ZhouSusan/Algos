@@ -11,7 +11,6 @@ let sortedSquares = function(nums){
     return result.sort(function(a, b) { return a - b});
 };
 
-//
 function assertEqualsArray(actual, expected, testName) {
     let sameLength = true;
     let sameValue = true; 
