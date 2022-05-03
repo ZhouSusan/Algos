@@ -14,6 +14,28 @@ class Stack {
     }
 
     /**
+   * Removes the top / last item from this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The removed item or undefined if this stack was empty.
+   */
+    pop() {
+        return this.items.pop();
+    }
+
+    /**
+   * Retrieves the top / last item from this stack without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {Any} The top / last item of this stack.
+   */
+
+    peek() {
+        return this.items[items.length-1];
+    }
+
+
+    /**
    * Returns whether or not this stack is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
