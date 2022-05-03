@@ -13,6 +13,15 @@ class Stack {
         this.items = [];
     }
 
+    /**
+   * Returns whether or not this stack is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean}
+   */
+    isEmpty() {
+        return this.length === 0 ? true : false;
+    }
 
     /**
    * Returns the size of this stack.
