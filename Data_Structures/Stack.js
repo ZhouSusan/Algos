@@ -12,4 +12,29 @@ class Stack {
     constructor () {
         this.items = [];
     }
+
+
+    /**
+   * Returns the size of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {number} The length.
+   */
+
+    size() {
+        return this.length;
+    }
+}
+
+class StackNode {
+    constructor (data) {
+        this.data = data;
+        this. next = null;
+    }       
+}
+
+class LinkedListStack {
+    constructor() {
+        this.head = null;
+    }
 }
