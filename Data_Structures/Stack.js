@@ -14,6 +14,18 @@ class Stack {
     }
 
     /**
+   * Adds a new given item to the top / back of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @param {any} item The new item to be added to the top / back.
+   * @returns {number} The new length of this stack.
+   */
+    push(item) {
+        this.items.push(item);
+        return this.items.size();
+    }
+
+    /**
    * Removes the top / last item from this stack.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
