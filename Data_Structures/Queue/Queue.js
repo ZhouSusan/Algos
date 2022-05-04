@@ -48,7 +48,7 @@ class Queue {
         return first;
     }   
 
-        /**
+    /**
    * Returns whether or not this queue is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
