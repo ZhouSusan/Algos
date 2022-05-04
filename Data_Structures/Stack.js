@@ -9,8 +9,8 @@ class Stack {
      * @returns {Stack} (implict return)
      */
 
-    constructor () {
-        this.items = [];
+    constructor (items = []) {
+        this.items = items;
     }
 
     /**
@@ -22,7 +22,7 @@ class Stack {
    */
     push(item) {
         this.items.push(item);
-        return this.items.size();
+        return this.size();
     }
 
     /**
@@ -43,7 +43,7 @@ class Stack {
    */
 
     peek() {
-        return this.items[items.length-1];
+        return this.items[this.items.length-1];
     }
 
 
@@ -65,9 +65,13 @@ class Stack {
    */
 
     size() {
-        return this.length;
+        return this.items.length;
     }
 }
+
+let list = [1, 3, 5, 7];
+// console.log(list.pop());
+console.log(list.push(10));
 
 class StackNode {
     constructor (data) {
