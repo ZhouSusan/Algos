@@ -39,14 +39,14 @@ class LinkedListQuenes {
 
         const newTail = new Node(val);
 
-        if (this.head.isEmpty()) {
+        if (this.isEmpty()) {
             this.head = this.newTail;
             this.tail = this.newTail;
         } else {
             this.tail.next = this.newTail;
             this.tail = this.newTail;
         }
-    return this;
+    return ++this.size;
     }
 
     /**
@@ -55,7 +55,18 @@ class LinkedListQuenes {
    * @returns {Any} The removed item.
    */
     dequeue() {
+        if (this.isEmpty()) {
+            return null;
+        } 
 
+        const firstNode = this.head;
+        this.head = this.head.next;
+
+        if (this.head === null) {
+            this.tail = null;
+        }
+        --this.size;
+        return firstNode.data;
     }
 
     /**
@@ -65,6 +76,6 @@ class LinkedListQuenes {
    * @returns {Any} The first item.
    */
     front() {
-
+        return this.isEmpty() ? null : this.head.data;
     }
 }
