@@ -29,13 +29,32 @@ function acronymize(str) {
     return acronym;
 }
 
+function acronymize2 (str) {
+    let resultStr = '';
+    let isNewWord = true;
+
+    for (let j = 0; j < str.length; j++) {
+        if (str.charAt(j) === " ") {
+            isNewWord = true;
+        } else if ( isNewWord) {
+            resultStr += str[j].toUpperCase();
+            isNewWord = false;
+        }
+    }
+    console.log(resultStr);
+    return resultStr;    
+}
+
 function assestEqauls (actual, expected, testName) {
     if (actual === expected) {
         console.log('passed');
-    } 
-
-    console.log(`${testName} has failed`);
+    } else {
+        console.log(`${testName} has failed`);
+    }
 }
 
-assestEqauls(acronymize(str1), expected1, 'acronymize test');
-assestEqauls(acronymize(str2), expected2, 'acronymize test');
+// assestEqauls(acronymize(str1), expected1, 'acronymize test');
+// assestEqauls(acronymize(str2), expected2, 'acronymize test');
+
+assestEqauls(acronymize2(str1), expected1, 'acronymize test');
+assestEqauls(acronymize2(str2), expected2, 'acronymize test');
