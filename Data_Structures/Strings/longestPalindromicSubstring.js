@@ -32,33 +32,23 @@ const two_expected5 = "567765";
  * @returns {string} The longest palindromic substring from the given string.
  */
 
-function isPalindrome(str){
-    
-    let low = 0; 
-    let high = str.length-1;
-    
-    while (low <= high) {
-        if(str[low] === str[high]) {
-            low++;
-            high--;
-        }
-        else if (str[low] !== str[high]) {
-            return false;
+function longestPalindromicSubstring(sentence) {
+    let wordArray = sentence.match(/\b\w+\b/g),
+        longestWord = 0,
+        word = " ";
+
+    for (let i = 0; i < wordArray.length; i++) {
+        if (longestWord < wordArray[i].length && isPalindrome(wordArray[i])) {
+        longestWord = wordArray[i].length;
+        word = wordArray[i]
         }
     }
-    return true;
+    
+    return word;
 }
 
-
-function longestPalindromicSubstring(str) {
-    let longestPalindrome = "";
-    for(i=0;i<str.length;i++){
-        var tempStr=str.substring(i,str.length)
-        if(isPalindrome(tempStr)&(tempStr.length>=longestPalindrome)){
-            longestPalindrome=tempStr
-            }
-        }
-    return longestPalindrome
+function isPalindrome(str) {
+return str.split('').reverse().join('') === str;
 }
 console.log(longestPalindromicSubstring(two_str1));
 console.log(longestPalindromicSubstring(two_str2));
