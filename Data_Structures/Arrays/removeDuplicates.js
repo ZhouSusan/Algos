@@ -15,10 +15,11 @@ function removeDuplicates(arr) {
     }
 
     for (let key in elements) {
-        noDuplicatesArr.push(key);
+        noDuplicatesArr.push(parseInt(key));
     }
 
     return noDuplicatesArr;
 }
 
 console.log(removeDuplicates([1, 2, 3, 2, 3, 4, 6, 7, 6, 8]));// [1, 2, 3 4, 6, 7, 8]
+console.log(removeDuplicates([1, 1, 2]));// [1, 2, 3 4, 6, 7, 8]
