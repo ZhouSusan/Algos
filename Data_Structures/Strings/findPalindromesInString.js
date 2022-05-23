@@ -1,13 +1,18 @@
 let reverse = (txt) => {
     let words = [];
-    for (let i = txt.length-1; txt > 0; i--) {
+    for (let i = txt.length-1; i >= 0; i--) {
         words.push(txt[i]);
     }
-    return words.join(" ");
+    return words.join("");
 }
 
-let isPalindrome = (word, arrOfWords) => {
-    return reverse(word) && !arrOfWords.includes(word); 
+console.log(reverse('hello'));
+
+let isPalindrome = (word) => {
+    if (word.length === 1) {
+        return false;
+    }
+    return word === reverse(word); 
 }
 
 let findPalindromesInString = (str) => {
@@ -15,7 +20,7 @@ let findPalindromesInString = (str) => {
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < str.length-i; j++) {
             let substring = str.substring(j, j+i+1);
-            if (isPalindrome(substring, subStringsArr)) {
+            if (isPalindrome(substring)) {
                 subStringsArr.push(substring)
             }
         }
