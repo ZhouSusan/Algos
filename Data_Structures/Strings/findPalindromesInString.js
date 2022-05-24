@@ -20,6 +20,7 @@ let findPalindromesInString = (str) => {
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < str.length-i; j++) {
             let substring = str.substring(j, j+i+1);
+            console.log(substring);
             if (isPalindrome(substring)) {
                 subStringsArr.push(substring)
             }
