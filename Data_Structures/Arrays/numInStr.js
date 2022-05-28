@@ -32,34 +32,7 @@ function numInStr(arr) {
 parseInt('0e0')  // 0
 parseInt('08')   // 0, because '8' is not an octal digit.
 
-function numInStr(arr){
-    if (arr.length === 0){
-        return [];
-    }
-    var refArr = ['1','2','3','4','5','6','7','8','9','0'];
-    var outputArr =[];
-    for(var i=0; i<arr.length; i++){
-
-        for (var t =0 ; t<arr[i].length; t++){
-            if(refArr.indexOf(arr[i][t]) > -1){
-                outputArr.push(arr[i]);
-                break;
-                }
-            }
-        }
-
-    if (arr.length ===0){
-        return [];
-    }
-    var output = [];
-    for (var i = 0 ; i<arr.length; i++){
-        if (testPar.length > 0){
-            output.push(arr[i]);
-        }
-    }
-    return output;
-}
-console.log(  typeof (1 + 'a'),typeof (1+'1'));
+console.log(typeof (1 + 'a'),typeof (1+'1'));
 console.log(Number.parseInt('35.6'));
 console.log(Number.parseInt('123ABC4'));
 console.log(Number.parseInt('ABC123'));
