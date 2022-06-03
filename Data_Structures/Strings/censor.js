@@ -14,32 +14,33 @@ If all words have four characters or less, return the original string.
 The amount of * is the same as the length of the word. */
 
 function censor(str) {
-  if (str.length === 0) {
+    if (str.length === 0) {
     return "";
-  }
+}
 
-	var wordArr = str.split(" ");
-  for (var i = 0;  i < wordArr.length; i++) {
+var wordArr = str.split(" ");
+for (var i = 0;  i < wordArr.length; i++) {
     if (wordArr[i].length > 4) {
-      wordArr[i] = replacer(wordArr[i]);
+        wordArr[i] = replacer(wordArr[i]);
     } 
-  }
-  return wordArr.join(" ");
+}
+    return wordArr.join(" ");
 }
 
 function replacer(word) {
-  var char = word.split("");
-  for (var j = 0; j < char.length; j++) {
-    char[j] = "*";
-  }
-  return char.join("");
+    var char = word.split("");
+    for (var j = 0; j < char.length; j++) {
+        char[j] = "*";
+    }
+    return char.join("");
 }
 //replacer("hello"); "*****"
 
 function assertEquals (actual, expected, testName){
-  if (actual === expected) {
+    if (actual === expected) {
     console.log('passed');
-  }else {console.log('FAILED: '+actual+ ' does not matech '+expected)}
+    }else {
+    console.log('FAILED: '+actual+ ' does not matech '+expected)}
 }
 
 
