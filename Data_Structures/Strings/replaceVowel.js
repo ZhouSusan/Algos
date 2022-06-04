@@ -24,48 +24,48 @@ C: None.
 E: empty str.
   */
 
-// function replaceVowel(word) {
-//     var swappedStr= '';
-//     var referenceObj ={
-//         'a' : 1,
-//         'e' : 2,
-//         'i' : 3,
-//         'o' : 4,
-//         'u' : 5
-//     }
-// 	for (var index of word){
-//         if(referenceObj[index] === undefined){
-//             swappedStr +=index;
-//         }else {swappedStr += referenceObj[index];}
-//     }
-//     return swappedStr;
-// }
-
 function replaceVowel(word) {
-    if (word.length === 0) {
-        return "";
+    var swappedStr= '';
+    var referenceObj ={
+        'a' : 1,
+        'e' : 2,
+        'i' : 3,
+        'o' : 4,
+        'u' : 5
     }
-
-    var wordArr = word.split("");
-    for (var i = 0; i < wordArr.length; i++) {
-        if (wordArr[i] === 'a') {
-            wordArr[i] = 1;
-        }
-        if (wordArr[i] === 'e') {
-            wordArr[i] = 2;
-        }
-        if (wordArr[i] === 'i') {
-            wordArr[i] = 3;
-        }
-        if (wordArr[i] === 'o') {
-            wordArr[i] = 4;
-        }
-        if (wordArr[i] === 'u') {
-            wordArr[i] = 5;
-        }
+	for (var index of word){
+        if(referenceObj[index] === undefined){
+            swappedStr +=index;
+        }else {swappedStr += referenceObj[index];}
     }
-    return wordArr.join("");
+    return swappedStr;
 }
+
+// function replaceVowel(word) {
+//     if (word.length === 0) {
+//         return "";
+//     }
+
+//     var wordArr = word.split("");
+//     for (var i = 0; i < wordArr.length; i++) {
+//         if (wordArr[i] === 'a') {
+//             wordArr[i] = 1;
+//         }
+//         if (wordArr[i] === 'e') {
+//             wordArr[i] = 2;
+//         }
+//         if (wordArr[i] === 'i') {
+//             wordArr[i] = 3;
+//         }
+//         if (wordArr[i] === 'o') {
+//             wordArr[i] = 4;
+//         }
+//         if (wordArr[i] === 'u') {
+//             wordArr[i] = 5;
+//         }
+//     }
+//     return wordArr.join("");
+// }
 
 function assertEqual(actual, expected, testName){
     if (actual === expected){
