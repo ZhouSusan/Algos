@@ -3,7 +3,7 @@
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
+const isAnagram = function(s, t) {
     if (s.length != t.length) {
         return false; 
     }
@@ -17,4 +17,38 @@ var isAnagram = function(s, t) {
         }
     }
     return true;
+};
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram2 = function(s, t) {
+    if (s.length != t.length) {
+        return false; 
+    }
+    
+    let sObj = {};
+    
+    for (let i = 0; i < s.length; i++) {
+        if (sObj.hasOwnProperty(s[i])) {
+            sObj[s[i]] += 1;
+        } else {
+            sObj[s[i]] = 1;
+        }
+    }
+    
+    for (let j = 0; j < t.length; j++) {
+        if (sObj.hasOwnProperty(t[j])) {
+            if (sObj[t[j]] == 0) {
+                return false;
+            } else {
+                sObj[t[j]] -= 1;
+            }
+        } else {
+            return false;
+        }
+    }
+    return true; 
 };
