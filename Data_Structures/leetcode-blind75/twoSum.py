@@ -1,5 +1,5 @@
 def twoSum(nums, target) {
-    dictionary = {};
+    dictionary = {}
     for i in range(len(nums)):
         x = nums[i]
         if target-x in dictionary:
