@@ -12,8 +12,8 @@ class Solution:
         for i in range(max(len(a), len(b))):
             #we are going to add digit by digit 
             #but if one sting is shorter than the other, we trat an index out of bounds by setting its default to 0
-            #We can convert the integer of the string to a int by taking the ASC value of that string int minus the ACII value of 0
-                #So, if the character is 0, this will computer to the interger 0
+            #We can convert the integer of the string to an int by taking the ASC value of that string int minus the ACII value of 0
+                #So, if the character is 0, this will compute to the integer 0
                 #if the character is one, it will convert the integer 1
             digitA = ord(a[i]) - ord("0") if i < len(a) else 0
             digitB = ord(b[i]) - ord("0") if i < len(b) else 0
