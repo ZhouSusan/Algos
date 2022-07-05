@@ -11,3 +11,14 @@ var runningSum = function(nums) {
     }
     return resultArr;
 };
+
+//refactored 
+
+var runningSum2 = function(nums) {
+    let sum = nums[0];
+    for (let i = 1; i < nums.length; i++) {
+        sum += nums[i];
+        nums[i] = sum;
+    }
+    return nums;
+};
