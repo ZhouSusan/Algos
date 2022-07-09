@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let hashMap = {};
+    let hashMap = new Map();
     let result = [];
     
     for (let i = 0; i < nums.length; i++) {
