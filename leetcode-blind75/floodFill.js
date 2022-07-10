@@ -64,12 +64,12 @@ let floodFill = function (image, sr,sc,color) {
     }
 
     //checking up
-    if (image[sc-1] != undefined && image[sr][sc-1] == oldColor) {
+    if ( image[sr][sc-1] == oldColor) {
         floodFill(image,sr, sc-1, color);
     }
 
     //checking down
-    if (image[sc+1] != undefined && image[sr][sc+1] == oldColor) {
+    if (image[sr][sc+1] == oldColor) {
         floodFill(image, sr, sc+1, color);
     }
 
