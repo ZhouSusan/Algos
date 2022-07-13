@@ -8,7 +8,7 @@ class Node {
 class SinglyLinkedList {
     constructor() {
         this.head = head;
-        this.length = 0;
+        this.size = 0;
     }
 
     //adds an element at the end of list
@@ -39,7 +39,7 @@ class SinglyLinkedList {
             return this; 
         }
 
-        let addMe = new Node();
+        let addMe = new Node(val);
         if (index == 0) {
             this.head.next = addMe;
             addMe = this.head;
