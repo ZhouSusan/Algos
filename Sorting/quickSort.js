@@ -15,6 +15,7 @@ function quicksort(array) {
     return quicksort(left).concat(pivot, quicksort(right));
   };
 
+  //o(N logN)
 //refactored 
 
 function swap(nums, leftIdx, rightIdx) {
