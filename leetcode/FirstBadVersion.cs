@@ -13,7 +13,7 @@ public class Solution : VersionControl {
         while (left < right) 
         {
             int mid = left + (right-left)/2;
-            if (FirstBadVersion(mid)) 
+            if (IsBadVersion(mid)) 
             {
                 right = mid;
             } 
