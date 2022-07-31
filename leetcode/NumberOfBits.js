@@ -4,10 +4,9 @@
  */
 var hammingWeight = function(n) {
     let count = 0;
-    for (let i = 0; i < n.length; n++) {
-        if (n[i] == "1") {
-            count++;
-        }
-    } 
+    while (n != 0) {
+        n = n & (n-1);
+        count++;
+    }
     return count;
 };
