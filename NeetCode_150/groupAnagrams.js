@@ -8,8 +8,8 @@ const groupAnagrans = (strs) => {
         //sort letters
         let letters = str.split('').sort().join('');
         
-        if (strs.hasOwnProperty(str)) {
-            anagrams[letters] = anagrams[letter];
+        if (anagrams.hasOwnProperty(letters)) {
+            anagrams[letters] = anagrams[letters];
         } else {
             anagrams[letters] = [];
         }
@@ -17,7 +17,7 @@ const groupAnagrans = (strs) => {
         //add the value of the key to match its letter
         anagrams[letters].push(str);
     }
-    
+
     for (let key in anagrams) {
         //add values as subarrays of the collected anagrams 
         collectionAnagrams.push(anagrams[key]);
