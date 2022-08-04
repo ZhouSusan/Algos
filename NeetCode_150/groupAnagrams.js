@@ -1,19 +1,29 @@
 const inputArr = ['rat', 'jar', 'tar', 'raj', 'ram', 'arm', 'mar', 'art'];
 
-const groupAnagrans = (arr) => {
-    const arrMap = new Map();
-    for (let i = 0; i < arr.length; i++) {
-        let sortedInnerArr = [...arr[i]];
-        sortedInnerArr.sort();
-        sortedInnerArr = sortedInnerArr.join('');
-
-        if (arrMap.has(sortedInnerArr)) {
-            arrMap.get(sortedInnerArr).push(arr[i]);
+const groupAnagrans = (strs) => {
+    let anagrams = {};
+    let collectionAnagrams = [];
+    
+    for (let str of strs) {
+        //sort letters
+        let letters = str.split('').sort().join('');
+        
+        if (strs.hasOwnProperty(str)) {
+            anagrams[letters] = anagrams[letter];
         } else {
-            arrMap.set(sortedInnerArr, [arr[i]]);
-        };
-    };
-    return [...arrMap.values()];
+            anagrams[letters] = [];
+        }
+        
+        //add the value of the key to match its letter
+        anagrams[letters].push(str);
+    }
+    
+    for (let key in anagrams) {
+        //add values as subarrays of the collected anagrams 
+        collectionAnagrams.push(anagrams[key]);
+    }
+    
+    return collectionAnagrams;
 }
 
 console.log(groupAnagrans(inputArr));
