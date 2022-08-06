@@ -1,6 +1,13 @@
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
+    
+    The Dutch National Flag Problem 
+
+    1. array[0 to low-1] = 0 is present
+    2. array[low to mid-1] = 1 is present
+    3. array[mid to high-1] = unknown
+    4. array [ high to n (size of array)] = 2 is present
  */
 
 var sortColors = function(nums) {
@@ -10,20 +17,20 @@ var sortColors = function(nums) {
         nums[j] = temp;
     }
     
-    let zero = 0;
-    let one = 0;
-    let two = nums.length-1;
+    let low = 0;
+    let mid = 0;//pointer
+    let high = nums.length-1;
     
-    while (one <= two) {
-        if (nums[one] < 1) {
-            swap(zero, one);
-            zero += 1;
-            one += 1;
-        } else if (nums[one] == 1) {
-            one += 1;
+    while (mid <= high) {
+        if (nums[mid] < 1) {
+            swap(low, mid);
+            low += 1;
+            mid += 1;
+        } else if (nums[mid] == 1) {
+            mid += 1;
         } else {
-            swap(one, two);
-            two -=1;
+            swap(mid, high);
+            high -=1;
         }
     }
 };
