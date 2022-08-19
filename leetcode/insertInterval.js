@@ -58,3 +58,29 @@ var insert = function(intervals, newInterval) {
     intervals.splice(idxBeg, numOfIntervalsToDelete, [beg, end]);
     return intervals;
 };
+
+var insert2 = function(intervals, newInterval) {
+    let length = intervals.length;
+    let result = [];
+    let i = 0;
+    
+    while (i < length && intervals[i][1] < newInterval[0]) {
+        result.push(intervals[i]);
+        i++;
+    }
+    
+    while (i < length && intervals[i][0] <= newInterval[1]) {
+        newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
+        newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
+        i++;
+    }
+    
+    result.push(newInterval);
+    
+    while (i < length) {
+        result.push(intervals[i]);
+        i++;
+    }
+    
+    return result;
+};
