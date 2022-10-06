@@ -1,3 +1,3 @@
-#Working on completing Neetcode.io 150 practice problem.
+#Working on completing NeetCode All practice problem.
 
 https://neetcode.io/practice
